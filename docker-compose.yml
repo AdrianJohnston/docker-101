@@ -1,0 +1,16 @@
+version: "2.4"
+services:
+
+  example:
+    image: docker-example
+    build:
+        context: .
+        dockerfile: Dockerfile
+    command: python app.py 
+    volumes:
+      - .:/workspace/
+    environment:
+      - PRODUCTION=true
+    ports:
+      - 8080:8080
+  
